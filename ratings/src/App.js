@@ -1,16 +1,11 @@
-
-
+import React from "react";
 
 function App() {
-  return (
-    <div>
-      <h1>All Ratings Here!</h1>
-      <p>One Star</p>
-      
-    </div>
+  return React.createElement(
+    "div",
+    { className: "container" },
+    React.createElement("h1", {})
   );
 }
 
 export default App;
-
-
