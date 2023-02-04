@@ -1,10 +1,15 @@
-import React from "react";
+import Header from "./components/Header";
+import FeedbackItem from "./components/FeedbackItem";
+
 
 function App() {
-  return React.createElement(
-    "div",
-    { className: "container" },
-    React.createElement("h1", {})
+  return (
+    <>
+      <Header bgColor="#F39C12" textColor="black" />
+      <div className="container">
+        <FeedbackItem />
+      </div>
+    </>
   );
 }
 
