@@ -1,11 +1,11 @@
-// import {FaTimes} from 'react-icons/fa'
+//import {FaTimes} from 'react-icons/fa'
 import React from "react";
 import PropTypes from "prop-types";
 import { FaTimes } from "react-icons/fa";
 
 //below a conditional was used to display the card component.
 //childern is a node while reverse is a boolean
-function Card({ children, reverse, item, text, heading }) {
+function Card({ children, reverse, item, text, heading, deleteFeedback }) {
   //return <div className='card reverse'>{children}</div>;
   return (
     <div
@@ -17,6 +17,9 @@ function Card({ children, reverse, item, text, heading }) {
     >
       <h1>{heading}</h1>
       <div className="num-display">{item.rating}</div>
+      <button onClick={() => deleteFeedback(item.id)} className="close">
+        <FaTimes color="green" />
+      </button>
       <div className="text-display">{item.text}</div>
       <p>{text}</p>
       {/* <div className="num-display-count">{count}</div> */}
@@ -41,7 +44,3 @@ Card.propType = {
 };
 
 export default Card;
-
-{/* <button onClick={handleClick} className="close">
-  <FaTimes color="green" />
-</button> */}
