@@ -1,18 +1,17 @@
-import {FaTimes} from 'react-icons/fa'
+import { FaTimes } from "react-icons/fa";
 import react, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "./Shared/Card";
+import MyCard from "./Shared/MyCard";
 //import { useEffect } from "react";
 
 function FeedbackItem({ item, deleteFeedback }) {
-
   const [rating, setRating] = useState("⭐️");
   const [text, setText] = useState("All feed back Here 🫥");
   const [count, setCount] = useState(0);
   console.log(item.text);
   console.log(FeedbackItem);
 
-  
   const increment = () => {
     // setState({ ...state,  count + 1 });
     return setCount(count + 1);
@@ -25,11 +24,17 @@ function FeedbackItem({ item, deleteFeedback }) {
     return setCount(count - 1);
   };
   return (
-    <Card item={item}  deleteFeedback={deleteFeedback} />
+    // <Card item={item}  deleteFeedback={deleteFeedback} />
 
-    
-    
-/* <button onClick={() => console.log(item.id)} className="close">
+    <MyCard>
+      <div className="num-display">{item.rating}</div>
+      <button onClick={() => deleteFeedback(item.id)} className="close">
+        <FaTimes color="green" />
+      </button>
+      <div className="text-display">{item.text}</div>
+    </MyCard>
+
+    /* <button onClick={() => console.log(item.id)} className="close">
         <FaTimes color="green" />
       </button> */
 

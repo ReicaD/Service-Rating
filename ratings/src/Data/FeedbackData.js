@@ -6,12 +6,12 @@ const FeedbackData = [
   },
   {
     id: 2,
-    rating: 12,
+    rating: 4,
     text: " 2.Service is the rent we pay for being.",
   },
   {
     id: 3,
-    rating: 30,
+    rating: 9,
     text: "3.Quality is remembered long after the price is forgotten.",
   },
 ];

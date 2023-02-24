@@ -1,9 +1,9 @@
 import FeedbackItem from "./FeedbackItem";
 import PropTypes from "prop-types";
 
-function FeedbackList({ feedback, deleteFeedbackreact }) {
+function FeedbackList({ feedback, deleteFeedback }) {
   if (!feedback || feedback.length === 0) {
-    return <p>no feedback Yet!</p>;
+    return <p>No feedback Yet!</p>;
   }
   //passing the items from app into feedbacklist
   return (
