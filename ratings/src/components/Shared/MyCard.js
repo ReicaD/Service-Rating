@@ -1,7 +1,7 @@
 //import {FaTimes} from 'react-icons/fa'
 import React from "react";
 import PropTypes from "prop-types";
-import { FaTimes } from "react-icons/fa";
+//import { FaTimes } from "react-icons/fa";
 //import FeedbackItem from "../FeedbackItem";
 
 //below a conditional was used to display the card component.

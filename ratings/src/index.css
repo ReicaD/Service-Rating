@@ -100,7 +100,7 @@ header {
 
 .rating li:hover,
 .num-display {
-  background: green;
+  background: #686C18 ;
   color: #fff;
 }
 .num-displaysAll {
@@ -120,15 +120,18 @@ header {
 .input-group {
   display: flex;
   flex-direction: row;
-  border: 1px solid #ccc;
+  border: 1px solid #686C18;
   padding: 8px 10px;
   border-radius: 8px;
+  background-color: #fff;
 }
 
 input {
   flex-grow: 2;
   border: none;
   font-size: 16px;
+  
+   
 }
 
 input:focus {
@@ -173,7 +176,7 @@ input:focus {
 }
 
 .btn-primary {
-  background-color: #202142;
+  background-color: #515b14;
 }
 
 .btn-secondary {

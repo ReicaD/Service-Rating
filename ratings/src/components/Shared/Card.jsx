@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FaTimes } from "react-icons/fa";
-import FeedbackItem from "../FeedbackItem";
+//import FeedbackItem from "../FeedbackItem";
 
 //below a conditional was used to display the card component.
 //childern is a node while reverse is a boolean
@@ -22,7 +22,7 @@ function Card({ children, reverse, item, text, heading, deleteFeedback }) {
       <p>{text}</p>
       <div className="num-display">{item.rating}</div>
       <button onClick={() => deleteFeedback(item.id)} className="close">
-        <FaTimes color="green" />
+        <FaTimes color= "green"  />
       </button>
       <div className="text-display">{item.text}</div>
     </div>

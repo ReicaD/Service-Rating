@@ -31,7 +31,7 @@ function FeedbackItem({ item, deleteFeedback }) {
       {item.rating >= 5 ? (
         <div className="num-display">
           {item.rating}
-          <AiFillStar color="black" size={30} className="mr-5" />
+          <AiFillStar color="#DAA520" size={30} className="mr-5" />
           <br />
         </div>
       ) : (
