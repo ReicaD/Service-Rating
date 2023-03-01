@@ -10,8 +10,8 @@ function FeedbackItem({ item, deleteFeedback }) {
   const [rating, setRating] = useState("⭐️");
   const [text, setText] = useState("All feed back Here 🫥");
   const [count, setCount] = useState(0);
-  console.log(item.text);
-  console.log(FeedbackItem);
+  // console.log(item.text);
+  // console.log(FeedbackItem);
 
   const increment = () => {
     // setState({ ...state,  count + 1 });
