@@ -25,10 +25,6 @@ function Card({ children, reverse, item, text, heading, deleteFeedback }) {
         <FaTimes color="green" />
       </button>
       <div className="text-display">{item.text}</div>
-      {/* <div className="num-display-count">{count}</div> */}
-      {/* <br /> */}
-      {/* <button onClick={decrement}> 😡</button> */}
-      {/* <br /> */}
     </div>
   );
 }

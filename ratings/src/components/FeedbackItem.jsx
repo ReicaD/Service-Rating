@@ -31,7 +31,7 @@ function FeedbackItem({ item, deleteFeedback }) {
       {item.rating >= 5 ? (
         <div className="num-display">
           {item.rating}
-          <AiFillStar color="black" size={30} className="mr-5"/>
+          <AiFillStar color="black" size={30} className="mr-5" />
           <br />
         </div>
       ) : (
@@ -43,20 +43,6 @@ function FeedbackItem({ item, deleteFeedback }) {
       </button>
       <div className="text-display">{item.text}</div>
     </MyCard>
-
-    /* <button onClick={() => console.log(item.id)} className="close">
-        <FaTimes color="green" />
-      </button> */
-
-    // <div className="num-display">{item.rating}</div>
-    // <div className="text-display">{item.text}</div>
-
-    // <div className="num-display-count">{count}</div>
-
-    // <button onClick={increment}>❤️</button>
-    // <br />
-    // <button onClick={decrement}> 😡</button>
-    // <br />
   );
 }
 FeedbackItem.propTypes = {
