@@ -3,9 +3,9 @@ import MyCard from "./Shared/MyCard";
 import Button from "./Shared/Button";
 import RatingSelect from "./RatingSelect";
 
-function FeedbackForm() {
+function FeedbackForm({handleAdd}) {
   const [text, setText] = useState("");
-  const [reting, setRating] = useState(10);
+  const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
   // console.log("empty");
@@ -23,12 +23,23 @@ function FeedbackForm() {
     }
     setText(e.target.value);
   };
+  //e.preventDefault" helps the page not repeat rendering and avoiding 404 errs
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.trim().length > 10) {
+      const newFeedback = {
+        text,
+        rating,
+      };
+      handleAdd(newFeedback);
+    }
+  };
   return (
     <MyCard>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Rate your service</h1>
 
-       <RatingSelect/>
+        <RatingSelect select={(rating) => setRating(rating)} />
         <div className="input-group">
           <input
             onChange={handleTextChange}

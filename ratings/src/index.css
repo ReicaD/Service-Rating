@@ -113,7 +113,7 @@ header {
 }
 
 [type="radio"]:checked ~ label {
-  background: #ff6a95;
+  background: #686C18 ;
   color: #fff;
 }
 

@@ -1,11 +1,15 @@
 import { useState } from "react";
+//NOTE: select function is being fired in as a prop and once its fired off the console.log returns 
+//the active rating without a default radio button.
+function RatingSelect({ select }) {
+  const [selected, setSelected] = useState(10);
 
-function RatingSelect() {
-  const [selected, setSelected] = useState(1);
-
-  const handleChange =(e) => {}
-//NOTE: by using selected we are checking if button selectecd is equal whatever the current input is 
-//so if selected is equal to 1 then checked will return "true"
+  const handleChange = (e) => {
+    setSelected(+e.currentTarget.value);
+    select(+e.currentTarget.value);
+  };
+  //NOTE: by using selected we are checking if button selectecd is equal whatever the current input is
+  //so if selected is equal to 1 then checked will return "true"
   return (
     <ul className="rating">
       <li>
