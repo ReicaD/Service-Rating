@@ -1,4 +1,5 @@
 import { FaTimes } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
 import react, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "./Shared/Card";
@@ -27,7 +28,16 @@ function FeedbackItem({ item, deleteFeedback }) {
     // <Card item={item}  deleteFeedback={deleteFeedback} />
 
     <MyCard>
-      <div className="num-display">{item.rating}</div>
+      {item.rating >= 5 ? (
+        <div className="num-display">
+          {item.rating}
+          <AiFillStar color="black" size={30} className="mr-5"/>
+          <br />
+        </div>
+      ) : (
+        <div className="num-display">{item.rating}</div>
+      )}
+      {/* <div className="num-display">{item.rating}</div> */}
       <button onClick={() => deleteFeedback(item.id)} className="close">
         <FaTimes color="green" />
       </button>

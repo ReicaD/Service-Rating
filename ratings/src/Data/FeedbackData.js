@@ -2,17 +2,22 @@ const FeedbackData = [
   {
     id: 1,
     rating: 5,
-    text: "1.To keep a customer demands as much skill as to win one. ",
+    text: "To keep a customer demands as much skill as to win one. ",
   },
   {
     id: 2,
     rating: 4,
-    text: " 2.Service is the rent we pay for being.",
+    text: " Service is the rent we pay for being.",
   },
   {
     id: 3,
     rating: 9,
-    text: "3.Quality is remembered long after the price is forgotten.",
+    text: "Quality is remembered long after the price is forgotten.",
+  },
+  {
+    id: 4,
+    rating: 20,
+    text: "long after the price is forgotten.",
   },
 ];
 
