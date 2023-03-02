@@ -16,7 +16,7 @@ function Header({ text, bgColor, textColor }) {
   );
 }
 Header.defaultProps = {
-  text: "Feedback UI",
+  text: "Rankify",
   bgColor: "blue",
   textColor: "red",
 };
