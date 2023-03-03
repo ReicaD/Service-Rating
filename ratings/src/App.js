@@ -1,11 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
+import { BrowserRouter as Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackData from "./Data/FeedbackData";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
-import MyCard from "./components/Shared/MyCard";
+//import MyCard from "./components/Shared/MyCard";
+import AboutPage from "./pages/AboutPage";
 // import Card from "./components/Shared/Card";
 
 function App() {
@@ -24,18 +26,22 @@ function App() {
     }
   };
   return (
-    <>
-      <Header bgColor="#F39C12" textColor="black" />
+    
 
-      <div className="container">
-        <FeedbackForm handleAdd={addFeedback} />
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} deleteFeedback={deleteFeedback} />
-        <br />
-        <hr />
-        <br />
-      </div>
-    </>
+    <Routes>
+        <div className="container">
+      <Header bgColor="#F39C12" textColor="black" />
+          <FeedbackForm handleAdd={addFeedback} />
+          <FeedbackStats feedback={feedback} />
+          <FeedbackList feedback={feedback} deleteFeedback={deleteFeedback} />
+          <AboutPage />
+          <br />
+          <hr />
+          <br />
+          <Route path="/about" component={AboutPage} />
+        </div>
+      </Routes>
+  
   );
 }
 
