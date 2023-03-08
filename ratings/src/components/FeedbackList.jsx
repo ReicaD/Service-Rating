@@ -3,8 +3,9 @@ import FeedbackItem from "./FeedbackItem";
 import PropTypes from "prop-types";
 
 function FeedbackList({ feedback, deleteFeedback }) {
-  if (!feedback || feedback.length === 0) {
-    return <p>No feedback Yet!</p>;
+  if (!feedback || feedback.length === 10) {
+    // return <p>No feedback Yet!</p>;
+    console.log("No feedback Yet");
   }
   //passing the items from app into feedbacklist
   return (
@@ -61,6 +62,4 @@ FeedbackList.propTypes = {
 
 export default FeedbackList;
 
-{
-  /* <div>{item.text}</div> */
-}
+ 
