@@ -2,6 +2,7 @@ import { useState } from "react";
 import MyCard from "./Shared/MyCard";
 import Button from "./Shared/Button";
 import RatingSelect from "./RatingSelect";
+import Card from "./Shared/Card";
 
 function FeedbackForm({handleAdd}) {
   const [text, setText] = useState("");
@@ -36,6 +37,8 @@ function FeedbackForm({handleAdd}) {
   };
   return (
     <MyCard>
+    {/* // <Card> */}
+
       <form onSubmit={handleSubmit}>
         <h1>Rate your service</h1>
 
@@ -46,13 +49,14 @@ function FeedbackForm({handleAdd}) {
             type="text"
             placeholder="Write a Review"
             value={text}
-          />
+            />
           <Button type="submit" isDisabled={btnDisabled}>
             Send
           </Button>
         </div>
         {message && <div className="message">{message}</div>}
       </form>
+      {/* </Card> */}
     </MyCard>
   );
 }

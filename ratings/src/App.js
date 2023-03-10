@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
@@ -7,6 +7,7 @@ import FeedbackData from "./Data/FeedbackData";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import Navbar from "./components/Navbar";
+import AboutIconLink from "./components/AboutIconLink";
 //import MyCard from "./components/Shared/MyCard";
 import AboutPage from "./pages/AboutPage";
 // import Card from "./components/Shared/Card";
@@ -30,10 +31,11 @@ function App() {
     <div className="container">
       <Header bgColor="#F39C12" textColor="black" />
       <Navbar />
-
+{/* 
       <FeedbackForm handleAdd={addFeedback} />
       <FeedbackStats feedback={feedback} />
-      <FeedbackList feedback={feedback} deleteFeedback={deleteFeedback} />
+      <FeedbackList feedback={feedback} deleteFeedback={deleteFeedback} /> */}
+      {/* <AboutIconLink/> */}
     </div>
   );
 }

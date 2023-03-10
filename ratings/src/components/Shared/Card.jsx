@@ -25,6 +25,7 @@ function Card({ children, reverse, item, text, heading, deleteFeedback }) {
         <FaTimes color= "green"  />
       </button>
       <div className="text-display">{item.text}</div>
+      <div>{children}</div>
     </div>
   );
 }
@@ -36,7 +37,7 @@ Card.defaultProps = {
 };
 //this defines the type of props
 Card.propType = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   reverse: PropTypes.bool,
   text: PropTypes.string,
   heading: PropTypes.string,
