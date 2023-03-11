@@ -2,9 +2,10 @@ import { useState } from "react";
 import MyCard from "./Shared/MyCard";
 import Button from "./Shared/Button";
 import RatingSelect from "./RatingSelect";
-import Card from "./Shared/Card";
+//import Card from "./Shared/Card";
+import { NavLink } from "react-router-dom";
 
-function FeedbackForm({handleAdd}) {
+function FeedbackForm({ handleAdd }) {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -36,28 +37,36 @@ function FeedbackForm({handleAdd}) {
     }
   };
   return (
-    <MyCard>
-    {/* // <Card> */}
+    <div>
+      <MyCard>
+        {/* // <Card> */}
 
-      <form onSubmit={handleSubmit}>
-        <h1>Rate your service</h1>
+        <form onSubmit={handleSubmit}>
+          <h1>Rate your service</h1>
 
-        <RatingSelect select={(rating) => setRating(rating)} />
-        <div className="input-group">
-          <input
-            onChange={handleTextChange}
-            type="text"
-            placeholder="Write a Review"
-            value={text}
+          <RatingSelect select={(rating) => setRating(rating)} />
+          <div className="input-group">
+            <input
+              onChange={handleTextChange}
+              type="text"
+              placeholder="Write a Review"
+              value={text}
             />
-          <Button type="submit" isDisabled={btnDisabled}>
-            Send
-          </Button>
-        </div>
-        {message && <div className="message">{message}</div>}
-      </form>
-      {/* </Card> */}
-    </MyCard>
+            <Button type="submit" isDisabled={btnDisabled}>
+              Send
+            </Button>
+          </div>
+          {message && <div className="message">{message}</div>}
+        </form>
+        {/* </Card> */}
+      </MyCard>
+      <NavLink to="/home" activeClassName="active">
+        Home
+      </NavLink>
+      <NavLink to="/about" activeClassName="active">
+        About
+      </NavLink>
+    </div>
   );
 }
 

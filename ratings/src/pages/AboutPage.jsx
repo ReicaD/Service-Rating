@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import MyCard from "../components/Shared/MyCard";
-
+//import AboutIconLink from "../components/AboutIconLink";
 function AboutPage() {
   return (
     <MyCard>
@@ -13,6 +13,12 @@ function AboutPage() {
           <Link to="/home">Back to Home!</Link>
         </p>
       </div>
+      <NavLink to="/home" activeClassName="active">
+        Home
+      </NavLink>
+      <NavLink to="/about" activeClassName="active">
+        About
+      </NavLink>
     </MyCard>
   );
 }

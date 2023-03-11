@@ -46,6 +46,7 @@ function Navbar() {
         <Route path="/home" element={<HomePage />} />
       </Routes>
     </Router>
+    
     // </MyCard>
   );
 }

@@ -50,15 +50,15 @@ function FeedbackList({ feedback, deleteFeedback }) {
   // );
 }
 //arrayof or object of can be passed in, to shape the status of the proptypes
-FeedbackList.propTypes = {
-  feedback: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      rating: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired,
-    })
-  ),
-};
+// FeedbackList.propTypes = {
+//   feedback: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number,
+//       rating: PropTypes.number.isRequired,
+//       text: PropTypes.string.isRequired,
+//     })
+//   ),
+// };
 
 export default FeedbackList;
 
