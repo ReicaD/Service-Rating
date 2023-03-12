@@ -6,30 +6,35 @@ import ReviewData from "../Data/ReviewData";
 
 function SeeReviews() {
   const [reviews, setReviews] = useState(ReviewData)
-  
+
+  //  console.log(reviews);
   return (
     <div>
       <MyCard>
-        <div>
-         
-          <h1>SeeReviews</h1>
-        </div>
-          {/* <NavLink to="/home" activeclassname="active">
-          Home
-          </NavLink>
-          <NavLink to="/about" activeclassname="active">
-          About
-        </NavLink>  */}
-        {/* <Link to="/home" ></Link> */}
-      </MyCard>
-    </div>
-  );
-}
-console.log("ReviewData");
-
-export default SeeReviews;
-
-// const addReviews =(newReviews) =>{
-//   newReviews.id = uuidv4()
-//   setReviews([newReviews, ...reviews])
-// }
+      
+        {reviews.map((review) => (
+         <div key={review.id}>
+           <h1>{review.name}</h1>
+           <p>{review.comment}</p>
+           <h1></h1>
+         </div>
+        ))}
+       </MyCard>
+      </div>
+        );
+    }
+     
+    
+    export default SeeReviews;
+    
+    // const addReviews =(newReviews) =>{
+      //   newReviews.id = uuidv4()
+      //   setReviews([newReviews, ...reviews])
+      // }
+      {/* <NavLink to="/home" activeclassname="active">
+      Home
+      </NavLink>
+      <NavLink to="/about" activeclassname="active">
+      About
+    </NavLink>  */}
+    {/* <Link to="/home" ></Link> */}
