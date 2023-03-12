@@ -41,7 +41,7 @@ function App() {
         <Navbar />
         <AboutIconLink />
         {/* <SeeReviews/> */}
-        <ReviewData handleReviews={addReviews } />
+        {/* <ReviewData handleReviews={addReviews } /> */}
       </div>
     </div>
   );
