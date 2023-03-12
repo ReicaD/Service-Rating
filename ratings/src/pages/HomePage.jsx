@@ -14,6 +14,7 @@ const HomePage = () => {
     // new one  which is newFeedback
     setFeedback([newFeedback, ...feedback]);
   };
+  
 
   const deleteFeedback = (id) => {
     if (window.confirm("Confirm to delete")) {

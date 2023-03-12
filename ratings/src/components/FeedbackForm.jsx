@@ -5,7 +5,7 @@ import RatingSelect from "./RatingSelect";
 //import Card from "./Shared/Card";
 import { NavLink } from "react-router-dom";
 
-function FeedbackForm({ handleAdd }) {
+function FeedbackForm({ handleAdd,addReviews }) {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -60,12 +60,12 @@ function FeedbackForm({ handleAdd }) {
         </form>
         {/* </Card> */}
       </MyCard>
-      <NavLink to="/home" activeClassName="active">
+      {/* <NavLink to="/home" activeClassName="active">
         Home
       </NavLink>
       <NavLink to="/about" activeClassName="active">
         About
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 }
