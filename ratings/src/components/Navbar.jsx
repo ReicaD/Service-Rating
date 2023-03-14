@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import AboutPage from "../pages/AboutPage";
 import HomePage from "../pages/HomePage";
 import SeeReviews from "./SeeReviews";
-// import Post from "./Post";
+import Post from "./Post";
 
 // import MyCard from "./Shared/MyCard";
 // import Contact from "./components/Contact";
@@ -48,7 +48,7 @@ function Navbar() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/see_reviews" element={<SeeReviews />} />
-         {/* <Route path="/post/:id" element={<Post />} />  */}
+        <Route path="/post/:id/:name" element={<Post />} />
       </Routes>
     </Router>
 

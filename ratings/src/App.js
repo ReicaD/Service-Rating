@@ -42,7 +42,7 @@ function App() {
       <div className="container">
         <Navbar />
         <AboutIconLink />
-       <Post/> 
+       {/* <Post/>  */}
       </div>
         {/* <Route path="/post/:id" element={<Post />} />  */}
     {/* <Route path="/post/:id" element={<Post/>} /> */}
