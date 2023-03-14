@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.Post.jsx
 
 # testing
 /coverage

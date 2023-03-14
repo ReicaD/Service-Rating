@@ -9,6 +9,7 @@ function SeeReviews() {
 
   //  console.log(reviews);
   return (
+    
     <div>
       <MyCard>
         <h1>All Reviews!</h1>

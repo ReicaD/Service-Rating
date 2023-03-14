@@ -10,6 +10,8 @@ import FeedbackForm from "./components/FeedbackForm";
 import Navbar from "./components/Navbar";
 import AboutIconLink from "./components/AboutIconLink";
 import AboutPage from "./pages/AboutPage";
+import Post from "./components/Post";
+
 // import SeeReviews from "./components/SeeReviews";
  
 
@@ -40,9 +42,10 @@ function App() {
       <div className="container">
         <Navbar />
         <AboutIconLink />
-        {/* <SeeReviews/> */}
-        {/* <ReviewData handleReviews={addReviews } /> */}
+       <Post/> 
       </div>
+        {/* <Route path="/post/:id" element={<Post />} />  */}
+    {/* <Route path="/post/:id" element={<Post/>} /> */}
     </div>
   );
 }

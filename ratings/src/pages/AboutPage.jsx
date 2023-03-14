@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,Routes,Route } from "react-router-dom";
 import MyCard from "../components/Shared/MyCard";
+import Post from "../components/Post";
 // import AboutIconLink from "../components/AboutIconLink";
 function AboutPage() {
   return (
@@ -14,7 +15,9 @@ function AboutPage() {
           {" "}
           <h2>See All Rankers!</h2>
         </Link>
+
       </div>
+        <Route path="/post/:id/:name/:comment" element={<Post />} /> 
       {/* <NavLink to="/home" activeClassName="active">
         Home
       </NavLink>
