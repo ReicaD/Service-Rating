@@ -16,6 +16,8 @@ function AboutPage() {
           <h2>See All Rankers!</h2>
         </Link>
 
+        {/* <Routes><Route path="/add" element={<h1>All about Rankify</h1>}></Route></Routes> */}
+
       </div>
         {/* <Route path="/post/:id/:name/:comment" element={<Post />} />  */}
       {/* <NavLink to="/home" activeClassName="active">

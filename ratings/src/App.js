@@ -10,25 +10,25 @@ import FeedbackForm from "./components/FeedbackForm";
 import Navbar from "./components/Navbar";
 import AboutIconLink from "./components/AboutIconLink";
 import AboutPage from "./pages/AboutPage";
+// import { feedbackProvider } from "./Contex/FeedbackContex";
 import Post from "./components/Post";
+import { FeedbackProvider } from "./context/FeedbackContex";
 
 // import SeeReviews from "./components/SeeReviews";
- 
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
-  const [reviews, setReviews] = useState(ReviewData)
+  const [reviews, setReviews] = useState(ReviewData);
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4();
     //NOTE: the ...(spread operator) below allows the state to add on feedback and the
     // new one  which is newFeedback
     setFeedback([newFeedback, ...feedback]);
-
   };
-  const addReviews =(newReviews) =>{
-    newReviews.id = uuidv4()
-    setReviews([newReviews, ...reviews])
-  }
+  const addReviews = (newReviews) => {
+    newReviews.id = uuidv4();
+    setReviews([newReviews, ...reviews]);
+  };
 
   const deleteFeedback = (id) => {
     if (window.confirm("Confirm to delete")) {
@@ -37,19 +37,20 @@ function App() {
     }
   };
   return (
-    <div>
-      <Header bgColor="#F39C12" textColor="black" />
-      <div className="container">
-        <Navbar />
-        <AboutIconLink />
-       {/* <Post/>  */}
-      </div>
+    <FeedbackProvider>
+      <div>
+        <Header bgColor="#F39C12" textColor="black" />
+        <div className="container">
+          
+          <Navbar />
+          <AboutIconLink />
+          {/* <Post/>  */}
+        </div>
         {/* <Route path="/post/:id" element={<Post />} />  */}
-    {/* <Route path="/post/:id" element={<Post/>} /> */}
-    </div>
+        {/* <Route path="/post/:id" element={<Post/>} /> */}
+      </div>
+    </FeedbackProvider>
   );
 }
 
 export default App;
-
-

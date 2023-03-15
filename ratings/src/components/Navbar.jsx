@@ -4,6 +4,7 @@ import AboutPage from "../pages/AboutPage";
 import HomePage from "../pages/HomePage";
 import SeeReviews from "./SeeReviews";
 import Post from "./Post";
+// import { feedbackProvider } from "./Contex/FeedbackContex";
 
 // import MyCard from "./Shared/MyCard";
 // import Contact from "./components/Contact";
@@ -11,6 +12,8 @@ import Post from "./Post";
 function Navbar() {
   return (
     // <MyCard>
+     
+
     <Router>
       <div>
         <ul
@@ -19,14 +22,14 @@ function Navbar() {
             listStyle: "none",
             justifyContent: "space-between",
           }}
-        >
+          >
           <li>
             <Link to="/about">
               <button
                 className="btn btn-outline-danger"
                 type="submit"
                 style={{ background: "#D68910", color: "black" }}
-              >
+                >
                 <h2>About</h2>
               </button>
             </Link>
@@ -37,7 +40,7 @@ function Navbar() {
                 className="btn btn-outline-danger"
                 type="submit"
                 style={{ background: "#D68910", color: "black" }}
-              >
+                >
                 <h2>Home</h2>
               </button>
             </Link>
@@ -46,12 +49,13 @@ function Navbar() {
       </div>
       <Routes>
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/home/" element={<HomePage />} />
         <Route path="/see_reviews" element={<SeeReviews />} />
-        <Route path="/post/:id/:name" element={<Post />} />
+        <Route path="/post/*" element={<Post />} />
       </Routes>
     </Router>
 
+    
     // </MyCard>
   );
 }
