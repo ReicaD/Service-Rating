@@ -1,29 +1,21 @@
 import { FaTimes } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
-import react, { useState } from "react";
-import PropTypes from "prop-types";
+import react, { useContext,useState } from "react";
+// import PropTypes from "prop-types";
 import Card from "./Shared/Card";
 import MyCard from "./Shared/MyCard";
 //import { useEffect } from "react";
+import { FeedbackContext } from "../context/FeedbackContex";
 
-function FeedbackItem({ item, deleteFeedback }) {
-  const [rating, setRating] = useState("⭐️");
-  const [text, setText] = useState("All feed back Here 🫥");
-  const [count, setCount] = useState(0);
+function FeedbackItem({ item }) {
+  const{deleteFeedback}=useContext(FeedbackContext)
+  // const [rating, setRating] = useState("⭐️");
+  // const [text, setText] = useState("All feed back Here 🫥");
+  // const [count, setCount] = useState(0);
   // console.log(item.text);
   // console.log(FeedbackItem);
 
-  const increment = () => {
-    // setState({ ...state,  count + 1 });
-    return setCount(count + 1);
-  };
-  const handleText = () => {
-    return setText("Top viewers");
-  };
-  const decrement = () => {
-    // setState({ ...state, count - 1 });
-    return setCount(count - 1);
-  };
+   
   return (
     // <Card item={item}  deleteFeedback={deleteFeedback} />
 
@@ -45,8 +37,8 @@ function FeedbackItem({ item, deleteFeedback }) {
     </MyCard>
   );
 }
-FeedbackItem.propTypes = {
-  item: PropTypes.object.isRequired,
-};
+// FeedbackItem.propTypes = {
+//   item: PropTypes.object.isRequired,
+// };
 
 export default FeedbackItem;

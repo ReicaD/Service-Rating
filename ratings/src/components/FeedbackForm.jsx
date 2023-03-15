@@ -1,19 +1,23 @@
 import { useState } from "react";
+import { useContext } from "react";
 import MyCard from "./Shared/MyCard";
 import Button from "./Shared/Button";
 import RatingSelect from "./RatingSelect";
+import { FeedbackContext } from "../context/FeedbackContex";
 //import Card from "./Shared/Card";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
-function FeedbackForm({ handleAdd }) {
+function FeedbackForm() {
+
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
+  const { addFeedback } = useContext(FeedbackContext);
   // console.log("empty");
   const handleTextChange = (e) => {
     //this checks the length of the text/message by giving it conditional statements
-    if (text == "") {
+    if (text === "") {
       setBtnDisabled(true);
       setMessage(null);
     } else if (text !== "" && text.trim().length <= 10) {
@@ -24,7 +28,9 @@ function FeedbackForm({ handleAdd }) {
       setBtnDisabled(false);
     }
     setText(e.target.value);
+    // console.log(setText(e.target.value));
   };
+  
   //e.preventDefault" helps the page not repeat rendering and avoiding 404 errs
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +39,7 @@ function FeedbackForm({ handleAdd }) {
         text,
         rating,
       };
-      handleAdd(newFeedback);
+      addFeedback(addFeedback);
     }
   };
   return (
