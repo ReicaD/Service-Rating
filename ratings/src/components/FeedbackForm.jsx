@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useContext } from "react";
+import { useState,useContext,useEffect } from "react";
+ 
 import MyCard from "./Shared/MyCard";
 import Button from "./Shared/Button";
 import RatingSelect from "./RatingSelect";
@@ -13,7 +13,16 @@ function FeedbackForm() {
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
-  const { addFeedback } = useContext(FeedbackContext);
+
+  const { addFeedback,feedbackEdit } = useContext(FeedbackContext);
+
+  useEffect(()=> {
+     if(feedbackEdit.edit === true){
+       setBtnDisabled(false)
+       setText(feedbackEdit.item.text)
+       setRating(feedbackEdit.item.rating)
+     }
+  },[feedbackEdit])
   // console.log("empty");
   const handleTextChange = (e) => {
     //this checks the length of the text/message by giving it conditional statements
@@ -46,10 +55,8 @@ function FeedbackForm() {
     <div>
       <MyCard>
         {/* // <Card> */}
-
         <form onSubmit={handleSubmit}>
           <h1>Rate your service</h1>
-
           <RatingSelect select={(rating) => setRating(rating)} />
           <div className="input-group">
             <input
@@ -66,14 +73,13 @@ function FeedbackForm() {
         </form>
         {/* </Card> */}
       </MyCard>
-      {/* <NavLink to="/home" activeClassName="active">
-        Home
-      </NavLink>
-      <NavLink to="/about" activeClassName="active">
-        About
-      </NavLink> */}
     </div>
   );
 }
 
 export default FeedbackForm;
+
+
+
+
+ 

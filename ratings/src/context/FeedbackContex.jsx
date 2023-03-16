@@ -7,45 +7,51 @@ function FeedbackProvider({ children }) {
   const [feedback, setFeedback] = useState([
     {
       id: 1,
-      text: "This is feedback item 1",
-      rating: 10
+      text: "This is feedback item 11",
+      rating: 10,
     },
     {
       id: 2,
-      text: "This is feedback item 1",
-      rating: 10
+      text: "This is feedback item 12",
+      rating: 10,
     },
     {
       id: 3,
-      text: "This is feedback item 1",
-      rating: 10
+      text: "This is feedback item 45",
+      rating: 10,
     },
     {
       id: 4,
-      text: "This is feedback item 1",
-      rating: 10
+      text: "This is feedback item 133",
+      rating: 10,
     },
     {
       id: 5,
-      text: "This is feedback item 1",
-      rating: 10
+      text: "This is feedback item 881",
+      rating: 10,
     },
     {
       id: 6,
-      text: "This is feedback item 1",
-      rating: 10
+      text: "This is feedback item 100",
+      rating: 10,
     },
     {
       id: 7,
-      text: "This is feedback item 1",
-      rating: 10
+      text: "This is feedback item 871",
+      rating: 10,
     },
     {
       id: 8,
-      text: "This is feedback item 1",
-      rating: 10
+      text: "This is feedback item 154",
+      rating: 10,
     },
   ]);
+  //add feedback
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    item: {},
+    edit: false,
+  });
+  // this will delete the feedback
   const deleteFeedback = (id) => {
     if (window.confirm("Confirm to delete")) {
       // //feedback filter returns an array minus the one were deleting.
@@ -58,9 +64,18 @@ function FeedbackProvider({ children }) {
     // new one  which is newFeedback
     setFeedback([newFeedback, ...feedback]);
   };
+  //setting the items to be updated by passing in an object from state
+  const editFeedback = (item) => {
+    setFeedbackEdit({
+      item,
+      edit: true,
+    });
+  };
   return (
     //this wraps the context from all our components, value takes in functions or states needed.
-    <FeedbackContext.Provider value={{ feedback,deleteFeedback,addFeedback }}>
+    <FeedbackContext.Provider
+      value={{ feedback, deleteFeedback, addFeedback, editFeedback,feedbackEdit, }}
+    >
       {children}
     </FeedbackContext.Provider>
   );
