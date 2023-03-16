@@ -22,6 +22,7 @@ function FeedbackForm() {
        setText(feedbackEdit.item.text)
        setRating(feedbackEdit.item.rating)
      }
+     // depency array monitors the edit which can help optimize performance and prevent unnecessary re-renders.
   },[feedbackEdit])
   // console.log("empty");
   const handleTextChange = (e) => {
@@ -48,7 +49,7 @@ function FeedbackForm() {
         text,
         rating,
       };
-      addFeedback(addFeedback);
+      addFeedback(newFeedback);
     }
   };
   return (

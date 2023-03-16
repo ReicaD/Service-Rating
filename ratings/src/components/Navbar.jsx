@@ -35,7 +35,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/home">
+            <Link to="/">
               <button
                 className="btn btn-outline-danger"
                 type="submit"
@@ -49,7 +49,7 @@ function Navbar() {
       </div>
       <Routes>
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/home/" element={<HomePage />} />
+        <Route exact path="/" element={<HomePage />} />
         <Route path="/see_reviews" element={<SeeReviews />} />
         <Route path="/post/*" element={<Post />} />
       </Routes>
