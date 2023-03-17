@@ -58,6 +58,11 @@ function FeedbackProvider({ children }) {
       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
+  //updates  feedback item <upd updates the items
+  const updateFeedback = (id, updItem) => {
+    setFeedback(feedback.map((item)=> item.id === id ?{...item, ...updItem}:item))
+  }
+
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4();
     //NOTE: the ...(spread operator) below allows the state to add on feedback and the
@@ -74,7 +79,14 @@ function FeedbackProvider({ children }) {
   return (
     //this wraps the context from all our components, value takes in functions or states needed.
     <FeedbackContext.Provider
-      value={{ feedback, deleteFeedback, addFeedback, editFeedback,feedbackEdit, }}
+      value={{
+        feedback,
+        feedbackEdit,
+        deleteFeedback,
+        addFeedback,
+        editFeedback,
+        updateFeedback
+      }}
     >
       {children}
     </FeedbackContext.Provider>

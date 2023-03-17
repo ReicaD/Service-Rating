@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState,useContext,useEffect } from "react";
+import { FeedbackContext } from "../context/FeedbackContex";
 //NOTE: select function is being fired in as a prop and once its fired off the console.log returns 
 //the active rating without a default radio button.
 function RatingSelect({ select }) {
   const [selected, setSelected] = useState(10);
 
+  //getting the data of the form to be rendered with the rating
+  const { feedbackEdit } = useContext(FeedbackContext);
+
+  useEffect(() => {
+    setSelected(feedbackEdit.item.rating)
+  
+     
+  }, [feedbackEdit])
+  
   const handleChange = (e) => {
     setSelected(+e.currentTarget.value);
     select(+e.currentTarget.value);

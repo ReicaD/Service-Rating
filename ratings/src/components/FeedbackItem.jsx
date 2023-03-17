@@ -15,7 +15,7 @@ function FeedbackItem({ item }) {
 
   return (
     <MyCard>
-      {item.rating >= 5 ? (
+      {item.rating >= 3 ? (
         <div className="num-display">
           {item.rating}
           <AiFillStar color="#DAA520" size={30} className="mr-5" />

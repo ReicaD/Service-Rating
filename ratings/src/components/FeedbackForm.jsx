@@ -14,7 +14,7 @@ function FeedbackForm() {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
-  const { addFeedback,feedbackEdit } = useContext(FeedbackContext);
+  const { addFeedback,feedbackEdit,updateFeedback} = useContext(FeedbackContext);
 
   useEffect(()=> {
      if(feedbackEdit.edit === true){
@@ -22,7 +22,7 @@ function FeedbackForm() {
        setText(feedbackEdit.item.text)
        setRating(feedbackEdit.item.rating)
      }
-     // depency array monitors the edit which can help optimize performance and prevent unnecessary re-renders.
+     // depencyarray monitors the edit which can help optimize performance and prevent unnecessary re-renders.
   },[feedbackEdit])
   // console.log("empty");
   const handleTextChange = (e) => {
@@ -49,7 +49,13 @@ function FeedbackForm() {
         text,
         rating,
       };
-      addFeedback(newFeedback);
+
+      if (feedbackEdit.edit === true){
+        updateFeedback(feedbackEdit.item.id,newFeedback)
+      }else{
+        
+        addFeedback(newFeedback);
+      }
     }
   };
   return (
