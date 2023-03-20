@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import MyCard from "./Shared/MyCard";
 import ReviewData from "../Data/ReviewData";
-//  import { v4 as uuidv4 } from "uuid";
-// import { Link, NavLink } from "react-router-dom";
-
+ 
 function SeeReviews() {
   const [reviews, setReviews] = useState(ReviewData);
 
@@ -20,6 +18,7 @@ function SeeReviews() {
           <div key={review.id}>
             <h1>{review.name}</h1>
             <p>{review.comment}</p>
+            <img src={review.image}/>
           </div>
         </MyCard>
       ))}
