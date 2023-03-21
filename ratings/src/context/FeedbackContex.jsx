@@ -5,6 +5,7 @@ import { useEffect } from "react";
 const FeedbackContext = createContext();
 //the provider below wraps up all our components by passing down children
 function FeedbackProvider({ children }) {
+  const [isLoading, setIsLoading] = useState(true);
   const [feedback, setFeedback] = useState([]);
   //add feedback
   const [feedbackEdit, setFeedbackEdit] = useState({
@@ -12,37 +13,48 @@ function FeedbackProvider({ children }) {
     edit: false,
   });
   useEffect(() => {
-    fetchFeedback()
+    fetchFeedback();
   }, []);
 
   //fetch feedback by using promises from package.json
   const fetchFeedback = async () => {
-    const response = await fetch(
-      `http://localhost:5001/feedback?_sort=id&_order=desc`
-    );
+    const response = await fetch(`/feedback?_sort=id&_order=desc`);
 
     const data = await response.json();
-    setFeedback(data)
+    setFeedback(data);
+    setIsLoading(false);
   };
   // this will delete the feedback
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async (id) => {
     if (window.confirm("Confirm to delete")) {
+      await fetch(`/feedback/${id}`, { method: "DELETE" });
       // //feedback filter returns an array minus the one were deleting.
       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
   //updates  feedback item <upd updates the items
-  const updateFeedback = (id, updItem) => {
+  const updateFeedback = async (id, updItem) => {
+    const response = await fetch(`/feedback/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updItem),
+    });
+    const data = await response.json();
     setFeedback(
-      feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item))
+      feedback.map((item) => (item.id === id ? { ...item, ...data } : item))
     );
   };
-
-  const addFeedback = (newFeedback) => {
-    newFeedback.id = uuidv4();
+  //Adding feedback
+  const addFeedback = async (newFeedback) => {
+    const response = await fetch("/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newFeedback),
+    });
+    const data = await response.json();
     //NOTE: the ...(spread operator) below allows the state to add on feedback and the
-    // new one  which is newFeedback
-    setFeedback([newFeedback, ...feedback]);
+    // new one  which is setFeedback from the back end.
+    setFeedback([data, ...feedback]);
   };
   //setting the items to be updated by passing in an object from state
   const editFeedback = (item) => {
@@ -57,6 +69,7 @@ function FeedbackProvider({ children }) {
       value={{
         feedback,
         feedbackEdit,
+        isLoading,
         deleteFeedback,
         addFeedback,
         editFeedback,

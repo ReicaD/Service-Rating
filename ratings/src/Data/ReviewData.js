@@ -32,7 +32,7 @@ const ReviewData = [
   },
   {
     id: 5,
-    name: "Sarah",
+    name: "Kuruthum",
     comment:
       "I've been using this shampoo for a few weeks now and my hair has never looked better. It's soft, shiny, and has more volume than ever before. I highly recommend it.",
     image:

@@ -11,14 +11,19 @@
       "text": "this is feedback coing from back end"
     },
     {
-      "id": 3,
-      "rating": 66,
-      "text": "this is feedback coing from back end"
+      "text": "Lastly, remember that everyone's hair is unique, and what works for one person may not work for another. It may take some trial and error to find the  products for your hair type and concerns",
+      "rating": 10,
+      "id": 4
     },
     {
-      "rating": "30",
-      "text": "New New",
-      "id": 4
+      "text": "Brand Reputation: Choose products from reputable brands that have a proven track record of producing high-quality hair products.",
+      "rating": 3,
+      "id": 5
+    },
+    {
+      "text": "producing high-quality hair products.",
+      "rating": 8,
+      "id": 6
     }
   ]
 }
