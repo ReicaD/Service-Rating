@@ -6,10 +6,10 @@ import Spinner from "./Shared/Spinner";
 function FeedbackList() {
   const { feedback, isLoading } = useContext(FeedbackContext);
   // console.log("this is feedback",feedback);
-  if (!isLoading && (!feedback || feedback.length === 0)) {
-    return <p>No feedback Yet!</p>;
+  // if (!isLoading && (!feedback || feedback.length === 0)) {
+  //   return <p>No feedback Yet!</p>;
     // console.log("No feedback Yet");
-  }
+  // }
   //passing the items from app into feedbacklist
 
   return isLoading ? (

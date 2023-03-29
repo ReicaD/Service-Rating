@@ -18,12 +18,14 @@ function FeedbackProvider({ children }) {
 
   //fetch feedback by using promises from package.json
   const fetchFeedback = async () => {
-    const response = await fetch(`/feedback?_sort=id&_order=desc`);
+    const response = await fetch(`http://localhost:5001/feedback?_sort=id&_order=desc`);
 
     const data = await response.json();
     setFeedback(data);
     setIsLoading(false);
+ 
   };
+
   // this will delete the feedback
   const deleteFeedback = async (id) => {
     if (window.confirm("Confirm to delete")) {
@@ -34,7 +36,7 @@ function FeedbackProvider({ children }) {
   };
   //updates  feedback item <upd updates the items
   const updateFeedback = async (id, updItem) => {
-    const response = await fetch(`/feedback/${id}`, {
+    const response = await fetch(`http://localhost:5001/feedback/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updItem),
@@ -46,7 +48,7 @@ function FeedbackProvider({ children }) {
   };
   //Adding feedback
   const addFeedback = async (newFeedback) => {
-    const response = await fetch("/feedback", {
+    const response = await fetch("http://localhost:5001/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newFeedback),
