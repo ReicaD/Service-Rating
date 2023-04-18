@@ -29,9 +29,9 @@ function FeedbackItem({ item }) {
         <FaTimes color="green" />
       </button>
       {/* //adding a button to update the state */}
-      <button onClick={() => editFeedback(item)} className="edit">
+      {/* <button onClick={() => editFeedback(item)} className="edit">
         <FaEdit color="green" />
-      </button>
+      </button> */}
       <div className="text-display">{item.text}</div>
     </MyCard>
   );
